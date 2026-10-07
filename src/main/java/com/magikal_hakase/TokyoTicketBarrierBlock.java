@@ -22,7 +22,10 @@ public class TokyoTicketBarrierBlock extends BlockTicketBarrier {
     // remaps both this mod and MTR to official names, so the overrides are applied correctly.
     public VoxelShape getCollisionShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction facing = IBlock.getStatePropertySafe(state, BlockStateProperties.HORIZONTAL_FACING);
-        return IBlock.getVoxelShapeByDirection(13.0, 0.0, -2.5, 16.0, 18.0, 18.5, facing);
+        TicketSystem.EnumTicketBarrierOpen open = IBlock.getStatePropertySafe(state, BlockTicketBarrier.OPEN);
+        VoxelShape base = IBlock.getVoxelShapeByDirection(13.0, 0.0, -2.5, 16.0, 18.0, 18.5, facing);
+        return open.isOpen() ? base : Shapes.or(
+                IBlock.getVoxelShapeByDirection(0.0, 0.0, 7.0, 16.0, 24.0, 9.0, facing), base);
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
