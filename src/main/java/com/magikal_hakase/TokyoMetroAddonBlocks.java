@@ -80,23 +80,23 @@ public class TokyoMetroAddonBlocks {
                     STONE_PROPERTIES.get()));
 
     public static final RegistryObject<Block> ALUMINUM_SPINDLE = registerBlock("aluminum_spindle",
-            () -> new DirectionalSlabBlock(STONE_PROPERTIES.get()));
+            () -> new DirectionalSlabBlock(STONE_PROPERTIES.get().noOcclusion()));
 
     public static final RegistryObject<Block> ALUMINUM_SPINDLE_BLOCK = registerBlock("aluminum_spindle_block",
             () -> new DirectionBlock(STONE_PROPERTIES.get()));
 
     public static final RegistryObject<Block> ALUMINUM_SPINDLE_SLOPE = registerBlock("aluminum_spindle_slope",
-            () -> new AluminumSpindleSlopeBlock(STONE_PROPERTIES.get()));
+            () -> new AluminumSpindleSlopeBlock(STONE_PROPERTIES.get().noOcclusion()));
 
     public static final RegistryObject<Block> FLUORESCENT_LIGHT = registerBlock("fluorescent_light",
             () -> new FluorescentLightBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
-                    .strength(1.0f).lightLevel(state -> 15)));
+                    .strength(1.0f).lightLevel(state -> 15).noOcclusion()));
 
     public static final RegistryObject<Block> STAINLESS_STEEL_FENCE = registerBlock("stainless_steel_fence",
-            () -> new StainlessSteelFenceBlock(METAL_STRONG_PROPERTIES.get()));
+            () -> new StainlessSteelFenceBlock(METAL_STRONG_PROPERTIES.get().noOcclusion()));
 
     public static final RegistryObject<Block> METRO_BENCH = registerBlock("metro_bench",
-            () -> new MetroBenchBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0f)));
+            () -> new MetroBenchBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2.0f).noOcclusion()));
 
     public static final RegistryObject<Block> GUIDANCE_BLOCK = registerBlock("guidance_block",
             () -> new GuidanceBlock(STONE_WEAK_PROPERTIES.get().noOcclusion()));
@@ -125,15 +125,15 @@ public class TokyoMetroAddonBlocks {
 
     public static final RegistryObject<Block> EMERGENCY_EXIT_SIGN = registerBlock("emergency_exit_sign",
             () -> new EmergencyExitSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
-                    .strength(1.5f, 6.0f).lightLevel(state -> 3)));
+                    .strength(1.5f, 6.0f).lightLevel(state -> 3).noOcclusion()));
 
     public static final RegistryObject<Block> AISLE_GUIDE_SIGN = registerBlock("aisle_guide_sign",
             () -> new EmergencyExitSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
-                    .strength(1.5f, 6.0f).lightLevel(state -> 3)));
+                    .strength(1.5f, 6.0f).lightLevel(state -> 3).noOcclusion()));
 
     public static final RegistryObject<Block> AISLE_GUIDE_SIGN_BOTH = registerBlock("aisle_guide_sign_both",
             () -> new EmergencyExitSignBlock(BlockBehaviour.Properties.of().mapColor(MapColor.METAL)
-                    .strength(1.5f, 6.0f).lightLevel(state -> 3)));
+                    .strength(1.5f, 6.0f).lightLevel(state -> 3).noOcclusion()));
 
     public static final RegistryObject<Block> POSTER_NOTICE = registerBlock("poster_notice",
             () -> new MetroPosterBlock(STONE_WEAK_PROPERTIES.get().noOcclusion()));
@@ -171,10 +171,10 @@ public class TokyoMetroAddonBlocks {
             () -> new TokyoTicketBarrierBlock(false));
 
     public static final RegistryObject<Block> TOKYO_TICKET_MACHINE = registerBlock("tokyo_ticket_machine",
-            () -> new TokyoTicketMachineBlock(METAL_PROPERTIES.get()));
+            () -> new TokyoTicketMachineBlock(METAL_PROPERTIES.get().noOcclusion()));
 
     public static final RegistryObject<Block> TOKYO_FARE_ADJUSTMENT_MACHINE = registerBlock("tokyo_fare_adjustment_machine",
-            () -> new TokyoTicketMachineBlock(METAL_PROPERTIES.get()));
+            () -> new TokyoTicketMachineBlock(METAL_PROPERTIES.get().noOcclusion()));
 
     public static final RegistryObject<Block> TOKYO_PLATFORM = registerBlock("tokyo_platform",
             () -> new BlockPlatform(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
